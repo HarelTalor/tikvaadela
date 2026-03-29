@@ -56,10 +56,10 @@ export default function Header() {
                 />
             </div>
             <div className="flex flex-col items-start translate-y-[1px]">
-              <span className={`text-xl md:text-2xl font-serif font-bold tracking-tighter leading-tight ${scrolled ? "text-primary" : "text-white"}`}>
+              <span className="text-xl md:text-2xl font-serif font-bold tracking-tighter leading-tight text-primary">
                 TIKVA ADELE
               </span>
-              <span className={`text-[10px] md:text-[12px] tracking-[0.15em] font-serif font-medium uppercase ${scrolled ? "text-muted-foreground" : "text-white/90"}`}>
+              <span className="text-[10px] md:text-[12px] tracking-[0.15em] font-serif font-medium uppercase text-muted-foreground">
                 קורס הלחמת ריסים
               </span>
             </div>
@@ -72,9 +72,7 @@ export default function Header() {
                 key={link.path}
                 href={link.path}
                 onClick={(e: React.MouseEvent<HTMLAnchorElement>) => scrollToSection(e, link.path)}
-                className={`text-sm font-medium transition-all hover:text-primary relative group/link ${
-                  scrolled ? "text-foreground" : "text-white drop-shadow-md"
-                }`}
+                className="text-sm font-medium transition-all hover:text-primary relative group/link text-foreground"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full" />
@@ -89,11 +87,7 @@ export default function Header() {
 
           {/* Mobile Toggle */}
           <button
-            className={`md:hidden p-2 rounded-full transition-all duration-300 ${
-              scrolled 
-                ? "text-primary bg-primary/10 border border-primary/20 shadow-sm" 
-                : "text-white bg-black/20 backdrop-blur-md border border-white/20"
-            } hover:scale-110 active:scale-95`}
+            className="md:hidden p-2 rounded-full transition-all duration-300 text-primary bg-primary/5 border border-primary/20 shadow-sm hover:scale-110 active:scale-95"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
